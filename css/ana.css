@@ -1,0 +1,763 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  /* ===== Colores =====*/
+  --body-color: #E4E9F7;
+  --sidebar-color: #FFF;
+  --primary-color: #132a38;
+  --primary-color-light: #F6F5FF;
+  --toggle-color: #DDD;
+  --text-color: #707070;
+
+  /* ===== Transiciones =====*/
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease; 
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.5s ease;
+  --tran-06: all 0.6s ease;
+  --tran-07: all 0.7s ease;
+}
+
+.contenedor-sesion{
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+/* ======================== lOGIN ========================*/
+.login{
+  background: #132a38;
+  width: 30%;
+  padding: 3%;
+  color: #ffffff;
+}
+.login p{
+  text-align: center;
+  font-size: 30px;
+  margin: 10px 0 40px 0;
+}
+.ui.form.sesion .ui.button{
+  margin-top: 40px;
+  margin-left: 30%;
+}
+
+/* ======================== SLIDER ========================*/
+.slider{
+  width: 70%;
+  height: 100%;
+  overflow: hidden;
+}
+.slider ul{
+  display: flex;
+  animation: slide 16S infinite alternate linear;
+  width: 400%;
+}
+.slider li{
+  width: 100%;
+  list-style: none;
+}
+.slider img{
+  width: 100%;
+  height: 100vh;
+}
+@keyframes slide{
+  0%{margin-left: 0%;}
+  20%{margin-left: 0%;}
+
+  25%{margin-left: -100%;}
+  45%{margin-left: -100%;}
+
+  50%{margin-left: -200%;}
+  70%{margin-left: -200%;}
+
+  75%{margin-left: -300%;}
+  100%{margin-left: -300%;}
+}
+
+/* ============================= DASHBOARD ======================= */
+.dashboard{
+  height: 100vh;
+  background: var(--body-color);
+  transition: var(--tran-05);
+}
+body.dark{
+  --body-color: #18191A;
+  --sidebar-color: #242526;
+  --primary-color: #3A3B3C;
+  --primary-color-light: #3A3B3C;
+  --toggle-color: #FFF;
+  --text-color: #CCC;
+}
+/* ======================== SIDEBAR ============================== */
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  padding: 10px 14px;
+  background:  var(--sidebar-color);
+  transition: var(--tran-07);
+  z-index: 100;
+}
+.sidebar.close{
+  width: 88px;
+}
+/* ======================== RESUABLE CSS ======================== */
+.sidebar .text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color);
+  transition: var(--tran-03);
+  white-space: nowrap;
+  opacity: 1;
+}
+.sidebar.close .text{
+  overflow: hidden;
+}
+.sidebar .imagen {
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar li{
+  height: 50px;
+  margin-top: 2px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.sidebar li .iconos{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  font-size: 20px;
+}
+.sidebar li .text,
+.sidebar li .iconos {
+  color: var(--text-color);
+  transition: var(--tran-02);
+}
+.sidebar header{
+  position: relative;
+}
+
+.sidebar .image-text img{
+  width: 40px;
+  border-radius: 6px;
+}
+.sidebar header .image-text{
+  display: flex;
+  align-items: center;
+}
+header .image-text .header-text{
+  display: flex;
+  flex-direction: column;
+}
+.header-text .name{
+  font-weight: 600;
+}
+.header-text .profession{
+  margin-top: -2px;
+}
+.sidebar header .dash{
+  position: absolute;
+  top: 50%;
+  right: -25px;
+  transform: translateY(-50%) rotate(180deg);
+  height: 25px;
+  width: 25px;
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--sidebar-color);
+  font-size: 15px;
+  transition: var(--tran-03);
+}
+.sidebar.close header .dash{
+  transform: translateY(-50%);
+}
+body.dark .sidebar header .dash {
+  color: var(--text-color);
+}
+.sidebar li a{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: var(--tran-04);
+}
+.sidebar li a:hover{
+  background: var(--primary-color);
+}
+.sidebar li a:hover .iconos,
+.sidebar li a:hover .text{
+  color: var(--sidebar-color);
+}
+.sidebar.close li a:hover .text {
+  overflow: visible;
+  margin-left: 20%;
+  background: var(--primary-color);
+  padding: 10px;
+  border-radius: 0 6px 6px 0;
+}
+body.dark .sidebar li a:hover .iconos,
+body.dark .sidebar li a:hover .text {
+  color: var(--text-color);
+}
+.sidebar .menu-bar{
+  height: calc(100% - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.menu-bar .mode{
+  position: relative;
+  border-radius: 6px;
+  background: var(--primary-color-light);
+}
+.menu-bar .mode .moon-sun{
+  height: 50px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+}
+.menu-bar .mode i{
+  position: absolute;
+  transition: var(--tran-05);
+}
+.menu-bar .mode i.sun{
+  opacity: 0;
+}
+body.dark .menu-bar .mode i.sun{
+  opacity: 1;
+}
+body.dark .menu-bar .mode i.moon {
+  opacity: 0;
+}
+.menu-bar .mode .toggle-switch{
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-width: 60px;
+  cursor: pointer;
+  border-radius: 6px;
+  background: var(--primary-color-light);
+  transition: var(--tran-07);
+}
+.toggle-switch .switch{
+  position: relative;
+  height: 22px;
+  width: 44px;
+  border-radius: 25px;
+  background: var(--toggle-color);
+  border: none;
+}
+.switch::before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  background: var(--sidebar-color);
+  transition: var(--tran-03);
+}
+body.dark .switch::before{
+  left: 24px;
+
+}
+.modulos{
+  position: relative;
+  height: 100vh;
+  left: 250px;
+  width: calc(100% - 250px);
+  background: var(--body-color);
+  transition: var(--tran-07);
+}
+.modulos .text{
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--text-color);
+  padding: 18px 40px;
+}
+.sidebar.close ~ .modulos{
+  left: 88px;
+  width: calc(100% - 88px);
+}
+
+/* ======================== REGISTRAR USUARIO ======================== */
+.modulos .text .titulo {
+  margin-bottom: 10px;
+}
+.modulos .text .formulario-registrar {
+  width: 95%;
+  margin: auto;
+  padding: 40px 0 0 0;
+}
+.modulos .text .ui.form label {
+  color: var(--text-color);
+}
+.modulos .text .ui.form input,
+#tipoDocumento, #tipoUsuario,
+#jornadaDocente, #grado,
+#grupo, #parentesco, #seleccioneSexo {
+  margin: 0 0 15px 0;
+  background: var(--sidebar-color);
+  color: var(--text-color);
+}
+p.texto-input-file {
+  text-align: center;
+  color: var(--text-color);
+}
+div.input-file {
+  position: relative;
+  width: 40%;
+  background: var(--sidebar-color);
+  height: 36px;
+  border-radius: 3px;
+  padding: 1.5% 0 0 2%;
+  border: 1px solid rgba(0, 0, 0, 0.123);
+}
+input.btn-file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.preliminar {
+  width: 50%;
+  height: 40.5vh;
+  float: right;
+  margin: -6% 30px 0 0;
+  border: 2px solid var(--sidebar-color);
+}
+.preliminar img {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+}
+.modulos .text .continuar{
+  display: flex;
+  position: absolute;
+  bottom: 1%;
+  width: 20%;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  color: var(--text-color);
+  background: var(--primary-color-light);
+}
+.modulos .text .continuar:hover{
+  color: var(--primary-color-light);
+  background: var(--primary-color);
+}
+body.dark .modulos .text .continuar:hover{
+  color: var(--text-color);
+  background: var(--sidebar-color);
+}
+
+/* ======================== ROL USUARIOS ======================== */
+.docente, .administrador, .estudiante{
+  width: 80%;
+  margin: auto;
+  margin-top: 5rem;
+}
+.modulos .text .continuar.extendido{
+  position: absolute;
+  width: 15rem;
+  font-size: 20px;
+  top: 20rem;
+}
+.modulos .text .continuar.extendido.estu{
+  top: 30rem;
+}
+
+/* ======================== CORREO ======================== */
+.buscar{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.buscar .buscar-input{
+  width: 50%;
+}
+.buscar .boton-buscar{
+  width: 30%;
+}
+.buscar .buscar-input input{
+  outline: none;
+  border: none;
+  width: 100%;
+  background:  var(--sidebar-color);
+  color: var(--text-color);
+  border-radius: 6px;
+  padding: 7px 0 7px 20px;
+  font-size: 20px;
+}
+.buscar .buscar-input i{
+  position: absolute;
+  top: 27%;
+  left: 47%;
+  font-size: 20px;
+}
+.modulos .text .continuar.buscar-btn{
+  font-size: 20px;
+  width: 10%;
+  height: 70%;
+  top: 17%;
+  margin-left: 20px;
+}
+.modulos .text .menu-correo{
+  display: block;
+  position: relative;
+  width: 30%;
+  height: 40px;
+  margin-top: 20px;
+}
+.modulos .text .menu-correo .opciones-menu{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.modulos .text .menu-correo .opciones-menu a{
+  display: block;
+  font-size: 20px;
+  padding: 9px;
+  color: var(--text-color);
+}
+.modulos .text .menu-correo .opciones-menu a.activo{
+  background: var(--sidebar-color);
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 0;
+}
+.modulos .text .contenido-correo{
+  background: var(--sidebar-color);
+  margin-top: -.1%;
+  padding: 10px;
+  border-radius: 0 10px 10px 10px;
+}
+.contenido-correo .correos{
+  margin-left: 30px;
+  margin-bottom: 20px;
+  padding: .7% 1% 1.2% 1%;
+  border-bottom: 3px solid var(--toggle-color);
+  border-radius: 5px 0 0 5px;
+}
+.contenido-correo .correos:hover{
+  background: var(--primary-color);
+  color: var(--primary-color-light);
+}
+body.dark .contenido-correo .correos:hover {
+  color: var(--text-color)
+}
+.contenido-correo .correos .enviador{
+  font-size: 17px;
+  margin-right: 5%;
+}
+.contenido-correo .correos .asunto-correo{
+  font-size: 20px;
+  margin-left: 10px;
+}
+.contenido-correo .correos .fecha-correo{
+  font-size: 15px;
+  float: right;
+}
+.contenido-correo .correos .archivos-correo{
+  display: flex;
+  position: relative;
+  width: 75%;
+  margin: 1% 0 0 25%;
+}
+.archivos-correo .archi-contenido{
+  background: var(--toggle-color);
+  font-size: 15px;
+  width: 10%;
+  height: 30px;
+  border-radius: 10px;
+  text-align: center;
+  margin-right: 10px;
+  padding: 0.5% 0 0 0;
+}
+body.dark .archivos-correo .archi-contenido{
+  background: var(--primary-color);
+}
+.correos:hover .archi-contenido{
+  color: var(--text-color);
+}
+body.dark .correos:hover .archi-contenido {
+  background: var(--sidebar-color);
+}
+
+/* ======================== CALIFICACIONES ======================== */
+/* ======================== VISTA DOCENTE ======================== */
+.modulos .text .vista-docente table{
+  width: 100%;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+.modulos .text .vista-docente th{
+  background: var(--sidebar-color);
+  border: 1px solid var(--sidebar-color);
+  font-size: 15px;
+  text-align: center;
+}
+.modulos .text .vista-docente td {
+  background: var(--toggle-color);
+  border: 1px solid var(--toggle-color);
+  font-size: 15px;
+  text-align: center;
+}
+body.dark .modulos .text .vista-docente td {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color-light);
+}
+.modulos .text .vista-docente .th-estudiante{
+  width: 25%;
+}
+.modulos .text .vista-docente .th-logros{
+  width: 10%;
+  font-size: 15px;
+}
+.modulos .text .vista-docente .th-numero{
+  width: 2%;
+}
+.modulos .text .vista-docente .nombre-estudiante-nota{
+  text-align: left;
+  padding: 7px 0 7px 10px;
+}
+.modulos .text .vista-docente .numero-nota {
+  font-size: 10px;
+  font-style: normal;
+}
+/* ======================== VISTA ESTUDIANTE ======================== */
+.modulos .text .vista-docente .notas-estudiante{
+  background: var(--text-color);
+  position: relative;
+  width: 100%;
+  height: 140px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.vista-docente .notas-estudiante .materia-notas{
+  background: var(--sidebar-color);
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+.vista-docente .notas-estudiante .materia-notas span{
+  margin-left: 20px;
+  margin-right: 70px;
+}
+
+/* ======================== MATERIAS ======================== */
+.modulos .text .ui.vertical.menu{
+  background: var(--sidebar-color);
+}
+.modulos .text .ui.dropdown.item{
+  background: var(--sidebar-color);
+  color: var(--text-color);
+}
+.modulos .text .actividades{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 20px 0;
+}
+.actividades .bloque-actividad{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 55vh;
+  background: var(--sidebar-color);
+  border-radius: 10px;
+  margin: 0 15px 0 0;
+}
+.actividades .bloque-actividad .imagen-actividad{
+  position: relative;
+  width: 45%;
+  height: 40vh;
+}
+.actividades .bloque-actividad .imagen-actividad img{
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
+}
+.bloque-actividad .contenido-actividad{
+  position: relative;
+  width: 45%;
+  height: 40vh;
+  padding-left: 15px;
+  font-size: 15px;
+}
+.bloque-actividad.bloque2{
+  margin-left: 30px;
+}
+.bloque-actividad .btn-entregar-actividad{
+  background: var(--primary-color-light);
+  color: var(--text-color);
+  display: block;
+  position: relative;
+  width: 75%;
+  height: 40px;
+  text-align: center;
+  border-radius: 6px;
+  padding-top: 3%;
+  margin-top: 8%;
+}
+.bloque-actividad .btn-entregar-actividad:hover{
+  background: var(--primary-color);
+  color: var(--primary-color-light);
+}
+body.dark .bloque-actividad .btn-entregar-actividad:hover{
+  background: var(--body-color);
+  color: var(--text-color);
+}
+
+.btn-actividad-docente{
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 30px;
+  background: var(--sidebar-color);
+  color: var(--text-color);
+  width: 20%;
+  height: 40px;
+  text-align: center;
+  padding: .7% 0 0 0;
+  margin: 20px 20px 0 0;
+  font-size: 20px;
+  border-radius: 10px;
+}
+.btn-actividad-docente:hover{
+  background: var(--primary-color);
+  color: var(--primary-color-light);
+}
+body.dark .btn-actividad-docente:hover {
+  color: var(--text-color);
+}
+
+/* ======================== WEB ======================== */
+.modulos .text .contenido-web{
+  width: 100%;
+  display: flex;
+}
+.contenido-web .enlaces-web{
+  width: 65%;
+}
+.contenido-web .vista-previa{
+  width: 35%;
+  margin-left: 4%;
+}
+.vista-previa .imagen-web{
+  position: relative;
+  width: 100%;
+  height: 55vh;
+  margin-top: 20px;
+}
+.vista-previa .imagen-web img{
+  width: 100%;
+  height: 55vh;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0 ;
+}
+.contenido-web .vista-previa .descripcion-previa{
+  padding: 20px;
+  background: var(--sidebar-color);
+  border-radius: 0 0 10px 10px;
+}
+.contenido-web .vista-previa .descripcion-previa p{
+  font-size: 15px;;
+}
+.contenido-web .info-enlace{
+  background: var(--sidebar-color);
+  border-radius: 0 10px 10px 0;
+}
+.contenido-web .info-enlace p{
+  font-size: 12px;
+  margin-left: 20px;
+  margin-top: -3%;
+}
+.contenido-web .info-enlace .titulo-enlace {
+  font-size: 20px;
+  margin-left: 5px;
+  margin-top: 10px;
+  padding: 5px;
+}
+.info-enlace:hover{
+  background: var(--primary-color);
+  color: var(--primary-color-light);
+}
+body.dark .info-enlace:hover {
+  color: var(--toggle-color);
+}
+.modulos .text .filtros-web{
+  display: flex;
+  width: 32%;
+  margin-top: 30px;
+}
+.modulos .text .filtros-web,
+#tipoArchivo, #institucion,
+#grado-web{
+  border-radius: none;
+  background: var(--sidebar-color);
+  color: var(--text-color);
+  border: none;
+}
+.modulos .text .filtros-web, #tipoArchivo{
+  border-radius: 10px 0 0 0;
+}
+.modulos .text .filtros-web,
+#grado-web {
+  border-radius: 0 10px 0 0;
+}
+
+/* ======================== PERFIL ======================== */
+.modulos .text .perfil{
+  display: flex;
+}
+.perfil .imagen-perfil{
+  width: 30%;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+.perfil .info-perfil{
+  background:  var(--primary-color-light);
+  width: 65%;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 6px;
+}
+/* ======================== INICIO ======================== */
+
+/* ======================== DIAGRAMA ======================== */
