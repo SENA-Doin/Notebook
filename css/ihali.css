@@ -266,7 +266,6 @@ body.dark .menu-bar .mode i.moon {
   width: 44px;
   border-radius: 25px;
   background: var(--toggle-color);
-  border: none;
 }
 .switch::before{
   content: '';
@@ -305,7 +304,7 @@ body.dark .switch::before{
 
 /* ======================== REGISTRAR USUARIO ======================== */
 .modulos .text .titulo {
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 .modulos .text .formulario-registrar {
   width: 95%;
@@ -318,7 +317,7 @@ body.dark .switch::before{
 .modulos .text .ui.form input,
 #tipoDocumento, #tipoUsuario,
 #jornadaDocente, #grado,
-#grupo, #parentesco, #seleccioneSexo {
+#grupo, #parentesco {
   margin: 0 0 15px 0;
   background: var(--sidebar-color);
   color: var(--text-color);
@@ -366,7 +365,6 @@ input.btn-file {
   height: 40px;
   align-items: center;
   justify-content: center;
-  border: none;
   border-radius: 10px;
   color: var(--text-color);
   background: var(--primary-color-light);
@@ -381,19 +379,30 @@ body.dark .modulos .text .continuar:hover{
 }
 
 /* ======================== ROL USUARIOS ======================== */
-.docente, .administrador, .estudiante{
-  width: 80%;
-  margin: auto;
-  margin-top: 5rem;
+.rolUsuarios{
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+}
+.rolUsuarios .administrador{
+  width: 25%;
+  margin-right: 2%;
+  padding-right: 20px;
+  border-right: 2px solid var(--text-color);
+}
+.rolUsuarios .docente{
+  width: 30%;
+  margin-right: 2%;
+  padding-right: 20px;
+  border-right: 2px solid var(--text-color);
+}
+.rolUsuarios .estudiante{
+  width: 40%;
 }
 .modulos .text .continuar.extendido{
-  position: absolute;
-  width: 15rem;
+  width: 30%;
   font-size: 20px;
-  top: 20rem;
-}
-.modulos .text .continuar.extendido.estu{
-  top: 30rem;
+  bottom: 5%;
 }
 
 /* ======================== CORREO ======================== */
@@ -666,7 +675,40 @@ body.dark .bloque-actividad .btn-entregar-actividad:hover{
 body.dark .btn-actividad-docente:hover {
   color: var(--text-color);
 }
-
+.ui.modal .header{
+  background: var(--sidebar-color);
+  color: var(--text-color);
+}
+.ui.modal{
+  background: var(--sidebar-color);
+}
+.ui.modal .image.content{
+  background: var(--sidebar-color);
+  color: var(--text-color);
+}
+.ui.modal .actions {
+  background: var(--sidebar-color);
+  color: var(--text-color);
+}
+.ui.modal .ui.form input, 
+#descripcionAsignar,
+#materiaAsignar,
+#grupoAsignar{
+  background: var(--primary-color-light);
+  color: var(--text-color);
+}
+.ui.modal .ui.form label{
+  color: var(--text-color);
+  margin-top: 20px;
+}
+.ui.modal .actions .ui.right.labeled.icon.button{
+  background: var(--body-color);
+  color: var(--text-color);
+}
+.ui.modal .actions .ui.right.labeled.icon.button:hover{
+  background: var(--primary-color);
+  color: var(--text-color);
+}
 /* ======================== WEB ======================== */
 .modulos .text .contenido-web{
   width: 100%;
@@ -759,5 +801,52 @@ body.dark .info-enlace:hover {
   border-radius: 6px;
 }
 /* ======================== INICIO ======================== */
-
+.contenido-correo .botones-crear{
+  display: flex;
+}
+.contenido-correo .botones-crear .boton{
+  background: var(--primary-color-light);
+  width: 18%;
+  height: 200px;
+  border-radius: 10px;
+  margin: 10px 20px 40px 10px;
+}
+.contenido-correo .botones-crear .boton a{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+  color: var(--text-color);
+}
+.contenido-correo .botones-crear .boton a:hover{
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+body.dark .contenido-correo .botones-crear .boton a:hover{
+  background: var(--body-color);
+  border-radius: 10px;
+}
+.contenido-correo .ui.link.cards.aligned.centered .card{
+  font-size: 20px;
+  margin-right: 50px;
+  margin-top: 50px;
+  background: var(--primary-color-light);
+}
+.ui.link.cards.aligned.centered .card .header{
+  font-size: 20px;
+  color: var(--text-color);
+}
+.ui.link.cards.aligned.centered .card .description{
+  font-size: 15px;
+  color: var(--text-color);
+}
+.ui.link.cards.aligned.centered .card .extra.content{
+  font-size: 13px;
+  color: var(--text-color);
+}
 /* ======================== DIAGRAMA ======================== */
+.modulos iframe{
+  width: 100%;
+  height: 100%;
+}

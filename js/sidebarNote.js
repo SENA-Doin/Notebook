@@ -1,6 +1,7 @@
 const body = document.querySelector("body"),
       sidebar = body.querySelector(".sidebar"),
       dash = body.querySelector(".dash"),
+      searchBtn = body.querySelector(".search-box"),
       modeSwitch = body.querySelector(".toggle-switch"),
       modeText = body.querySelector(".mode-text");
 
@@ -8,7 +9,7 @@ const body = document.querySelector("body"),
         sidebar.classList.toggle("close");
       });
 
-      /*modeSwitch.addEventListener("click", () =>{
+      modeSwitch.addEventListener("click", () =>{
         body.classList.toggle("dark");
 
         if(body.classList.contains("dark")){
@@ -16,7 +17,7 @@ const body = document.querySelector("body"),
         }else{
           modeText.innerText = "Modo Oscuro";
         }
-      });*/
+      });
 
 
 
