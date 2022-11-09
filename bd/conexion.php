@@ -5,7 +5,10 @@
     $user="root";
     $password="";
     $dbname="notebook";
-
+    
     $conexion = new mysqli($host, $user, $password, $dbname, $port, $socket)
-	or die ('No se pudo conectar a la base de datos ' . mysqli_connect_error());
+        or die ('Could not connect to the database server' . mysqli_connect_error());
+    
+    //$con->close();
+    
 ?>

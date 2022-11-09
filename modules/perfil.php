@@ -90,7 +90,7 @@
           </li>
 
           <li class="nav-link">
-            <a href="registrarUsuario.html">
+            <a href="registrarUsuario.php">
               <i class="address card icon iconos"></i>
               <span class="text nav-text">Registra usuario</span>
             </a>
@@ -177,52 +177,16 @@
             <div class="two fields">
               <div class="field">
                 <label for="">Correo</label>
-                <?php echo '<input type="text" name="" id="" value="'.$row["Correo"].'">'; ?>
+                <?php echo '<input type="text" name="" id="" value="'.$row["CorreoAdministrador"].'">'; ?>
               </div>
               <div class="field">
                 <label for="">Clave</label>
-                <?php echo '<input type="text" name="" id="" value="'.$row["Clave"].'">'; ?>
-                
+                <?php echo '<input type="text" name="" id="" value="'.$row["ClaveAdministrador"].'">'; ?>
               </div>
             </div>
-            <div class="two fields">
-              <div class="field">
-                <label for="">Grado</label>
-                <input type="text" name="" id="" value="ES ADMIN">
-              </div>
-              <div class="field">
-                <label for="">Grupo</label>
-                <input type="text" name="" id="" value="ES ADMIN">
-              </div>
-            </div>
-          </form>
-          <div class="titulo">
-            Acudiente
-          </div>
-          <form action="" method="post" class="ui form">
-            <div class="two fields">
-              <div class="field">
-                <label for="">Nombres</label>
-                <input type="text" name="" id="" value="ES ADMIN">
-              </div>
-              <div class="field">
-                <label for="">Apellidos</label>
-                <input type="text" name="" id="" value="ES ADMIN">
-              </div>
-            </div>
-            <div class="three fields">
-              <div class="field">
-                <label for="">Telefono</label>
-                <input type="text" name="" id="" value="ES ADMIN">
-              </div>
-              <div class="field">
-                <label for="">Correo</label>
-                <input type="text" name="" id="" value="ES ADMIN">
-              </div>
-              <div class="field">
-                <label for="">Parentesco</label>
-                <input type="text" name="" id="" value="ES ADMIN">
-              </div>
+            <div class="field">
+              <label for="">Cargo</label>
+              <?php echo '<input type="text" name="" id="" value="'.$row["Cargo"].'">'; ?>
             </div>
           </form>
         </div>

@@ -1,3 +1,6 @@
+<?php 
+  include("../bd/conexion.php")
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,7 +89,7 @@
           </li>
 
           <li class="nav-link">
-            <a href="registrarUsuario.html">
+            <a href="registrarUsuario.php">
               <i class="address card icon iconos"></i>
               <span class="text nav-text">Registra usuario</span>
             </a>
@@ -122,15 +125,15 @@
         Registrar usuario
       </div>
       <div class="formulario-registrar">
-        <form action="" method="post" class="ui form">
+        <form action="tipoUsuario.php" method="post" class="ui form">
           <div class="two fields">
             <div class="field">
               <label for="documento">N° Documento</label>
-              <input type="number" name="" id="documento">
+              <input type="number" name="documento" id="documento">
             </div>
             <div class="field">
               <label for="tipoDocumento">Tipo Documento</label>
-              <select class="selecciones" name="" id="tipoDocumento">
+              <select class="selecciones" name="tipoDocumento" id="tipoDocumento">
                 <option>Seleccione</option>
                 <option value="TI">Tarjeta identidad</option>
                 <option value="CC">Cedula ciudadania</option>
@@ -143,66 +146,72 @@
           <div class="four fields">
             <div class="field">
               <label for="Pnombre">Primer Nombre</label>
-              <input type="text" name="" id="Pnombre">
+              <input type="text" name="primerNombre" id="Pnombre">
             </div>
             <div class="field">
               <label for="Snombre">Segundo Nombre</label>
-              <input type="text" name="" id="Snombre">
+              <input type="text" name="segundoNombre" id="Snombre">
             </div>
             <div class="field">
               <label for="Papellido">Primer Apellido</label>
-              <input type="text" name="" id="Papellido">
+              <input type="text" name="primerApellido" id="Papellido">
             </div>
             <div class="field">
               <label for="Sapellido">Segundo Apellido</label>
-              <input type="text" name="" id="Sapellido">
+              <input type="text" name="segundoApellido" id="Sapellido">
             </div>
           </div>
         
-          <div class="three fields">
+          <div class="four fields">
             <div class="field">
-              <label for="">Fecha Nacimiento</label>
-              <input type="date" name="" id="">
+              <label for="Sexo">Sexo</label>
+              <Select class="selecciones" name="sexo" id="Sexo">
+                <option>Seleccione</option>
+                <option value="Masculino">Hombre</option>
+                <option value="Femenino">Mujer</option>
+                <option value="Otro">Otro</option>
+              </Select>
             </div>
             <div class="field">
-              <label for="">Telefono</label>
-              <input type="number" name="" id="">
+              <label for="fNacimiento">Fecha Nacimiento</label>
+              <input type="date" name="fechaNacimiento" id="fNacimiento">
             </div>
             <div class="field">
-              <label for="">Direccion</label>
-              <input type="text" name="" id="">
+              <label for="Telefono">Telefono</label>
+              <input type="number" name="telefono" id="Telefono">
+            </div>
+            <div class="field">
+              <label for="Direccion">Direccion</label>
+              <input type="text" name="direccion" id="Direccion">
             </div>
           </div>
         
           <div class="two fields">
             <div class="field">
               <label for="tipoUsuario">Rol del usuario</label>
-              <select name="" id="tipoUsuario">
+              <select name="rol" id="tipoUsuario">
                 <option>Seleccione</option>
-                <option value="">Docente</option>
-                <option value="">Estudiante</option>
-                <option value="">Administrador</option>
+                <option value="Docente">Docente</option>
+                <option value="Estudiante">Estudiante</option>
+                <option value="Administrador">Administrador</option>
               </select>
             </div>
             <div class="field">
               <label for="">Foto usuario</label>
               <div class="input-file">
                 <p class="text-iput-file"> <i class="hand point right icon"></i> Seleccionar foto</p> 
-                <input type="file" name="" id="imagen" onchange="vistaPreliminar(event)" class="btn-file">
+                <input type="file" name="foto" id="imagen" onchange="vistaPreliminar(event)" class="btn-file">
               </div>
               <div class="preliminar">
                 <img src="" alt="" id="fotoUsuario">
               </div>
             </div>
           </div>
-          <a href="tipoUsuario.html" class="continuar">Continuar con el registro</a>
+          <input type="submit" class="continuar" name="btn_confirmar" value="Continuar con el registro">
         </form>
       </div>
     </div>
   </section>
-
-
-  
   <script src="../js/sidebarNote.js"></script>
   <script src="../js/vistaPreliminar.js"></script>
 </body>
