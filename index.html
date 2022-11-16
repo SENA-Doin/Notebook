@@ -18,13 +18,13 @@
     <div class="login">
       <img class="ui aligned centered small circular image" src="img/logo_1.2.png">
       <p>Notebook Techs</p>
-      <form action="" class="ui form sesion">
+      <form action="php/iniciarSesion.php" class="ui form sesion" method="POST">
         <label for="">Correo</label>
-        <input class="hola" type="text">
+        <input class="hola" type="text" name="correo">
         <br><br>
         <label for="">Clave</label>
-        <input type="text">
-        <a href="modules/dashboard.html" class="ui inverted button">Iniciar sesion</a>
+        <input type="text" class="hola" name="clave">
+        <input type="submit" name="btn_enviar" class="ui inverted button" value="Iniciar Sesión">
       </form>
     </div>
     <div class="slider">
